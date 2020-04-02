@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: prod-custom-ingress
+  namespace: jx-production
+  annotations:
+    fabric8.io/generated-by: exposecontroller
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  labels:
+    provider: fabric8
+spec:
+  rules:
+  - host: stage.fndmt.eu
+    http:
+      paths:
+      - backend:
+          serviceName: ayamsemur
+          servicePort: 80
+  tls:
+  - hosts:
+    - stage.fndmt.eu
+    secretName: tls-stage-fndmt-eu-p
