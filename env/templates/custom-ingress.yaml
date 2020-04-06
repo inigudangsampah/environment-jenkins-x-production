@@ -20,4 +20,4 @@ spec:
   tls:
   - hosts:
     - stage.fndmt.eu
-    secretName: tls-stage-fndmt-eu-p
+    secretName: tls-fndmt-eu-p
