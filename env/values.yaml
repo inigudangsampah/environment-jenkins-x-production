@@ -13,11 +13,13 @@ expose:
   - --v
   - 4
   config:
-    domain: stage.fndmt.eu
+    domain: fndmt.eu
     exposer: Ingress
-    http: "true"
-    tlsacme: "false"
+    http: "false"
+    tlsSecretName: tls-fndmt-eu-p
+    tlsacme: "true"
     urltemplate: '{{.Service}}-{{.Namespace}}.{{.Domain}}'
+  production: true
 jenkins:
   Servers:
     Global: {}
